@@ -1591,8 +1591,8 @@ a {
   color: white;
 }
 
-/* Google Login Overlay CSS */
-.google-auth-overlay {
+/* Brand Login Overlay CSS */
+.brand-auth-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(15, 23, 42, 0.6);
@@ -1604,7 +1604,7 @@ a {
   padding: 16px;
 }
 
-.google-auth-card {
+.brand-auth-card {
   background: white;
   border-radius: 12px;
   box-shadow: var(--shadow-premium);
@@ -1615,31 +1615,45 @@ a {
   animation: fadeIn 0.3s ease-out;
 }
 
-.google-auth-close {
+.brand-auth-close {
   position: absolute;
   top: 16px;
   right: 16px;
   font-size: 24px;
   color: var(--text-light);
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.google-auth-header {
+.brand-auth-header {
   text-align: center;
   margin-bottom: 24px;
 }
 
-.google-logo {
-  margin-bottom: 12px;
+.brand-auth-logo {
+  margin: 0 auto 12px auto;
+  background: var(--primary);
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 900;
+  box-shadow: 0 4px 10px rgba(255, 82, 0, 0.2);
 }
 
-.google-auth-header h2 {
+.brand-auth-header h2 {
   font-size: 20px;
   font-weight: 600;
   color: var(--text-title);
   margin-bottom: 4px;
 }
 
-.google-auth-header p {
+.brand-auth-header p {
   font-size: 14px;
   color: var(--text-light);
 }
@@ -1649,13 +1663,13 @@ a {
   font-weight: 700;
 }
 
-.google-accounts-list {
+.brand-auth-accounts-list {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.google-account-item {
+.brand-auth-account-item {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1665,46 +1679,47 @@ a {
   text-align: left;
   width: 100%;
   background: white;
+  cursor: pointer;
 }
 
-.google-account-item:hover {
+.brand-auth-account-item:hover {
   background: #f8fafc;
   border-color: #cbd5e1;
 }
 
-.google-avatar {
+.brand-auth-avatar {
   width: 36px;
   height: 36px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.google-account-details {
+.brand-auth-account-details {
   display: flex;
   flex-direction: column;
 }
 
-.google-name {
+.brand-auth-name {
   font-size: 14px;
   font-weight: 600;
   color: var(--text-title);
 }
 
-.google-email {
+.brand-auth-email {
   font-size: 11px;
   color: var(--text-light);
 }
 
-.google-auth-loading {
+.brand-auth-loading {
   text-align: center;
   padding: 40px 0;
 }
 
-.google-spinner {
+.brand-auth-spinner {
   width: 40px;
   height: 40px;
   border: 4px solid #f3f3f3;
-  border-top: 4px solid #4285F4;
+  border-top: 4px solid var(--primary);
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin: 0 auto 20px;
@@ -1715,7 +1730,7 @@ a {
   100% { transform: rotate(360deg); }
 }
 
-.google-auth-footer {
+.brand-auth-footer {
   text-align: center;
   font-size: 10px;
   color: var(--text-light);

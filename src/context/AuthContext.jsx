@@ -181,7 +181,9 @@ function ClerkAuthWrapper({ children }) {
 
 // Main Combined Provider Export
 export function AuthProvider({ children }) {
-  const hasClerkKey = CLERK_KEY && CLERK_KEY.trim() !== "" && !CLERK_KEY.includes("xxxxxxxx");
+  const hasClerkKey = CLERK_KEY && 
+                      (CLERK_KEY.startsWith("pk_test_") || CLERK_KEY.startsWith("pk_live_")) && 
+                      !CLERK_KEY.includes("xxxxxxxx");
 
   if (!hasClerkKey) {
     return <MockAuthProvider>{children}</MockAuthProvider>;

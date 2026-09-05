@@ -53,28 +53,28 @@ export default function LandingPage({ onSearch, onSelectCuisine, onViewListing }
         {/* Floating food plates peeking from left/right edges */}
         <div className="hero-food-group-left">
           <img 
-            src="./salad.png" 
+            src={`${import.meta.env.BASE_URL}salad.png`} 
             alt="Fresh Salad Plate" 
             className="hero-floating-food food-left-salad" 
           />
           <img 
-            src="./tomato.png" 
+            src={`${import.meta.env.BASE_URL}tomato.png`} 
             alt="Fresh Tomato Slice" 
             className="hero-floating-ingredient food-left-tomato" 
           />
           <img 
-            src="./leaf.png" 
+            src={`${import.meta.env.BASE_URL}leaf.png`} 
             alt="Green Leaf" 
             className="hero-floating-ingredient food-left-leaf" 
           />
           <img 
-            src="./pepper.png" 
+            src={`${import.meta.env.BASE_URL}pepper.png`} 
             alt="Lemon Slice" 
             className="hero-floating-ingredient food-left-pepper" 
           />
         </div>
         <img 
-          src="./burger.png" 
+          src={`${import.meta.env.BASE_URL}burger.png`} 
           alt="Gourmet Burger Plate" 
           className="hero-floating-food food-right" 
         />

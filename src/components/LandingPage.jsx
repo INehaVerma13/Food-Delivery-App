@@ -50,70 +50,53 @@ export default function LandingPage({ onSearch, onSelectCuisine, onViewListing }
     <div className="landing-container">
       {/* Centered Hero layout */}
       <div className="landing-hero">
-        {/* Floating food plates peeking from left/right edges */}
-        <div className="hero-food-group-left">
-          <img 
-            src={`${import.meta.env.BASE_URL}salad.png`} 
-            alt="Fresh Salad Plate" 
-            className="hero-floating-food food-left-salad" 
-          />
-          <img 
-            src={`${import.meta.env.BASE_URL}tomato.png`} 
-            alt="Fresh Tomato Slice" 
-            className="hero-floating-ingredient food-left-tomato" 
-          />
-          <img 
-            src={`${import.meta.env.BASE_URL}leaf.png`} 
-            alt="Green Leaf" 
-            className="hero-floating-ingredient food-left-leaf" 
-          />
-          <img 
-            src={`${import.meta.env.BASE_URL}pepper.png`} 
-            alt="Lemon Slice" 
-            className="hero-floating-ingredient food-left-pepper" 
-          />
-        </div>
-        <img 
-          src={`${import.meta.env.BASE_URL}burger.png`} 
-          alt="Gourmet Burger Plate" 
-          className="hero-floating-food food-right" 
-        />
+        <div className="landing-hero-container">
+          <div className="hero-content">
+            <h1>Super Fast Delivery To Your Doorstep</h1>
+            <p>Discover the best restaurants, street food, and sweet treats in your town, prepared fresh and delivered warm.</p>
+            
+            <div className="dual-search-wrapper-centered">
+              {/* Box 1: Delivery Location Search */}
+              <div className="search-box-individual location-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="var(--primary)" strokeWidth="2.5" style={{ flexShrink: 0 }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <input 
+                  type="text" 
+                  className="search-input" 
+                  placeholder="Enter delivery location..."
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                />
+              </div>
 
-        <div className="hero-content" style={{ maxWidth: '820px' }}>
-          <h1>Super Fast Delivery To Your Doorstep</h1>
-          <p>Discover the best restaurants, street food, and sweet treats in your town, prepared fresh and delivered warm.</p>
-          
-          <div className="dual-search-wrapper-centered">
-            {/* Box 1: Delivery Location Search */}
-            <div className="search-box-individual location-box">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="var(--primary)" strokeWidth="2.5" style={{ flexShrink: 0 }}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              <input 
-                type="text" 
-                className="search-input" 
-                placeholder="Enter delivery location..."
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-              />
+              {/* Box 2: Food/Dish Search Form */}
+              <form className="search-box-individual food-box" onSubmit={handleSubmit}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" style={{ flexShrink: 0 }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input 
+                  type="text" 
+                  className="search-input" 
+                  placeholder="Search for restaurants, cuisines, or dishes..."
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                />
+              </form>
             </div>
+          </div>
 
-            {/* Box 2: Food/Dish Search Form */}
-            <form className="search-box-individual food-box" onSubmit={handleSubmit}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" style={{ flexShrink: 0 }}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-              <input 
-                type="text" 
-                className="search-input" 
-                placeholder="Search for restaurants, cuisines, or dishes..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-              />
-            </form>
+          <div className="hero-image-wrapper">
+            <img 
+              src={`${import.meta.env.BASE_URL}food_collage.jpg`} 
+              alt="Foodiez Delicious Food Selection" 
+              className="hero-banner-image" 
+            />
           </div>
         </div>
+
+
       </div>
 
       {/* Cuisines Mind slider */}
